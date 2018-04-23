@@ -9,7 +9,7 @@
 * 4.arr.unique3()-------------去重
 * 5.extractStr(str)-------------解析字串
 * 6.fibonacci(n)-------------记忆化斐波那契函数（Memoization）
-* 6.
+* 7.toChineseNum(num)--------------将数字转化为大写汉字
 * */
 
 //记忆化斐波那契函数（Memoization）
@@ -92,4 +92,25 @@ Array.prototype.unique3 = function(){
 const extractStr = (str) => {
   const ret = str.match(/:([^:\.])*?\./g) || []
   return ret.map((subStr) => subStr.replace(/[:\.]/g, ''))
+}
+
+//转化为大写汉字
+const toChineseNum = (num) => {//89.069;
+  const ChineseNum = ['','一','二','三','四','五','六','七','八','九','十','百','千','万','亿'];//数字汉字
+  const capitalNum = ['','壹','贰','叁','肆','伍','陆','柒','捌','玖','拾','佰','仟','万','亿'];//数字大写
+  const pi = ['点','零'];
+
+  //正则判断是否为合法数据类型
+  var regPos = /^\d+(\.\d+)?$/; //非负浮点数
+  var regNeg = /^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$/; //负浮点数
+  if(regPos.test(num) || regNeg.test(num)){
+    alert('没错！');
+  }else{
+    alert('错喽！');
+  }
+  for(let i = 0; i<num.length; i++){
+      // switch (num[i]){
+      //   case 0
+      // }
+  }
 }

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let s = '𠮷王海军，你叫什么名字';
+    for(let cn of s){
+      console.log(cn.codePointAt().toString(16));
+    }
+
+    //map结构
+    const map = new Map();
+    map.set('first','hello');
+    map.set('second','world');
+    for(let [key , value] of map){
+      console.log(key + ' is ' + value);
+    }
+
+    //提取JSON对象中的数据
+    let jsonData = {
+      id: 42,
+      status: "OK",
+      data: [867, 5309]
+    };
+    let {id, status, data} = jsonData;
+    console.log(id, status, data);
+
+    //函数多重赋值 对象
+    function addVar1() {
+      return {
+        cc:2,
+        dd:4,
+        ee:6
+      };
+    }
+    let {cc,dd,ee}=addVar1();
+    console.log('函数多重赋值对象：'+cc+'---'+dd+'-----'+ee)
+
+    //函数多重赋值 数组
+    function addVar([x,y,z]) {
+      return [x,y,z];
+    }
+    let [a,b,c] = addVar([2,3,4]);
+    console.log(a+'---'+b+'-----'+c);
+
+ const cona = {};
+ const conb = [];
+
+ ({ obja: cona.aa, objb: conb[0] } = { obja: 1111111, objb: 222222 });
+
+ console.log(cona);
+ console.log(conb);
+
+ [[1, 2], [3, 4]].map(([a, b]) => console.log(a + b));
+
+    let x = 1;
+    let y = 2;
+    console.log(x+'---'+y);
+    [x,y] = [y,x];
+    console.log(x+'---'+y);
+</script>
+</html>
